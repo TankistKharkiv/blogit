@@ -43,7 +43,7 @@ module Blogit
       @posts = Category.find(params[:category]).posts
 
       yield post if block_given?
-      action 'posts/index'
+      render action: 'posts/index'
     end
 
     # Handles GET requests to /blogit/posts/tagged/:tag.html. Renders the index template
