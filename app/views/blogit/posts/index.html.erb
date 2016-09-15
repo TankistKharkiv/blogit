@@ -8,7 +8,7 @@
   <% if @posts.any? %>
     <%= render partial: "blogit/posts/post",
       collection: @posts,
-      spacer_template: "blog_post_spacer",
+      spacer_template: "blogit/posts/blog_post_spacer",
       locals: { 
         show_comments_count: (Blogit.configuration.include_comments == :active_records) 
       }  %>
@@ -19,4 +19,4 @@
   <% end %>
 </div>
 
-<%= render "pagination" %>
+<%= render "blogit/posts/pagination" %>
