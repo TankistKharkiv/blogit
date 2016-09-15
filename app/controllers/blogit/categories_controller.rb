@@ -40,7 +40,7 @@ module Blogit
     #
     # Yields #post if called with a block (useful for calling super from subclasses)
     def show
-      @posts = Category.find(params[:category]).posts
+      @posts = Category.find(params[:category]).posts.for_index page_number
 
       yield post if block_given?
     end

@@ -62,9 +62,7 @@ module Blogit
     end
     
     # The page parameter value for the current locale
-    def page_number
-      @page_number ||= params[Kaminari.config.param_name]
-    end
+
     
     # Sets {#posts} for the XML feed
     def set_posts_for_feed

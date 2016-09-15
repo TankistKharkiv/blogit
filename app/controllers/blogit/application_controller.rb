@@ -25,6 +25,11 @@ module Blogit
       self.class.blogit_conf
     end
 
+    protected
+    def page_number
+      @page_number ||= params[Kaminari.config.param_name]
+    end
+
   end
   
 end
