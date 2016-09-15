@@ -38,7 +38,7 @@ module Blogit
     # Returns an ActiveRecord::Relation instance
     has_many :comments, :class_name => "Blogit::Comment"
 
-    belongs_to :category, :class_name => 'Blogit::Category', foreign_key: 'blogit_post_id'
+    belongs_to :category, :class_name => 'Blogit::Category'
 
     # ==========
     # = Scopes =
