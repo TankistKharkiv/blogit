@@ -75,6 +75,7 @@ module Blogit
     #
     def set_posts_for_index_page(tag = nil)
       @posts ||= Post.for_index(page_number)
+      @tags  ||= Post.tag_counts_on(:tags)
     end
     
     # Sets {#posts} for the HTML index page when a tag parameter is present

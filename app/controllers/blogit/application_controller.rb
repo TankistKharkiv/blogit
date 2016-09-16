@@ -7,6 +7,7 @@ module Blogit
     helper Blogit::LayoutHelper
     helper Blogit::PostsHelper
     helper Blogit::CommentsHelper
+    helper ActsAsTaggableOn::TagsHelper
     
     helper_method :blogit_conf
 
