@@ -6,7 +6,8 @@ module Blogit
 
     def show
       @categories = Category.all
-      posts_for_category = @categories.find(params[:category]).posts
+      @category = @categories.find(params[:category])
+      posts_for_category = @category.posts
       @total_posts_count = posts_for_category.length
       @posts = posts_for_category.for_index page_number
       @tags = posts_for_category.tag_counts_on(:tags)
