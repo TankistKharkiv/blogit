@@ -74,6 +74,7 @@ module Blogit
     # tag - The tag name to filter Posts by (default: nil)
     #
     def set_posts_for_index_page(tag = nil)
+      @categories ||= Category.all
       @total_posts_count ||= Post.tagged_with(params[:tag]).length
       @tags  ||= Post.tag_counts_on(:tags)
       @posts ||= Post.for_index(page_number)
