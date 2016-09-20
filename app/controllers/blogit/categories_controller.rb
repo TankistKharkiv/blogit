@@ -6,7 +6,7 @@ module Blogit
 
     def show
       @categories = Category.all
-      @category = @categories.find(params[:category])
+      @category = @categories.find_by_name(params[:category].gsub(/-/,' '))
       posts_for_category = @category.posts
       @total_posts_count = posts_for_category.length
       @posts = posts_for_category.for_index page_number
