@@ -89,7 +89,7 @@ module Blogit
     end
 
     def redirect_to_witout_slash
-      redirect_to main_app.blogit_url if request.path.ends_with? '/'
+      redirect_to main_app.blogit_url, status: 301 if request.original_fullpath.ends_with? '/'
     end
   end
 
