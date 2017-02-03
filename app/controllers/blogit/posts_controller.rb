@@ -6,6 +6,8 @@ module Blogit
     # The current Blogit::Post being displayed.
     #
     # Returns a Blogit::Post with id from params
+
+    before_action :redirect_to_witout_slash, only: :index
     attr_reader :post
 
     # The current Posts being displayed
@@ -86,6 +88,9 @@ module Blogit
       @posts = set_posts_for_index_page.tagged_with(params[:tag])
     end
 
+    def redirect_to_witout_slash
+      redirect_to main_app.blogit_url if request.path.ends_with? '/'
+    end
   end
 
 end
